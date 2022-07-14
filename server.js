@@ -19,6 +19,17 @@ app.get('/users', (req, res) => {
   })
 })
 
+app.get('/user/:id', (req, res) => {
+  console.log(req.params.id)
+  res.json({
+    success: true,
+    message: 'Successfully got single user',
+    data: {
+      user: req.params.id,
+    },
+  })
+})
+
 app.listen(8000, function () {
   console.log('Server running')
 })
